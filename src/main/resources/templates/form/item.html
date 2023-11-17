@@ -66,7 +66,8 @@
     <!-- radio button -->
     <div>
         <div>상품 종류</div>
-        <div th:each="type : ${itemTypes}" class="form-check form-check-inline">
+        <div th:each="type : ${T(hello.itemservice.domain.item.ItemType).values()}"
+             class="form-check form-check-inline">
             <input type="radio" th:field="${item.itemType}" th:value="${type.name()}"
                    class="form-check-input" disabled>
             <label th:for="${#ids.prev('itemType')}" th:text="${type.description}"
